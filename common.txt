@@ -1,3 +1,4 @@
+.git/HEAD
 .bash_history
 .bashrc
 .cache
@@ -5,7 +6,6 @@
 .cvs
 .cvsignore
 .forward
-.git/HEAD
 .history
 .hta
 .htaccess
