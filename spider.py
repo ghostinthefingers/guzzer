@@ -2,6 +2,8 @@ import aiohttp
 import asyncio
 import time
 import requests
+from difflib import SequenceMatcher
+
 
 def spider(base_url,):
     urls = []
@@ -20,7 +22,7 @@ def spider(base_url,):
     async def get_url(session, url):
         async with session.get(url) as resp:
             resp_text = await resp.text()
-            if not_found_text != resp_text:
+            if SequenceMatcher(None, not_found_text, resp_text).ratio() < 0.9 :
                 print('found this url, might be interesting:  '+ url)
 
     async def main():
